@@ -17,7 +17,8 @@ export interface IColumnLayoutProps {
   completedHandler: (v: any) => AnyAction;
   selectorState: IModel[];
   droppableId: string;
-  updateTextShowed: (v: any) => AnyAction;
+  update?:any
+  updateTextShowed?: (v: any) => AnyAction;
   updateHandler?: any;
   showTextField?: boolean;
 }

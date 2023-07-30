@@ -12,7 +12,6 @@ export const createCustomSlice = (name: string) => {
       completeStatus,
       reorder,
       update,
-      updateTextShowed,
       updateHandler,
     },
     reducer,
@@ -51,10 +50,6 @@ export const createCustomSlice = (name: string) => {
         state[index].isFinished = action.payload.isFinished;
         state[index].updatedAt = action.payload.updatedAt;
       },
-      updateTextShowed(state, action: PayloadAction<any>) {
-        const index = state.findIndex(({ id }) => id === action.payload.id);
-        state[index].isTextShowed = action.payload.isTextShowed;
-      },
       reorder(state, action) {
         const [removed] = state.splice(action.payload.source.index, 1);
         state.splice(action.payload.destination.index, 0, removed);
@@ -84,7 +79,6 @@ export const createCustomSlice = (name: string) => {
       completeStatus,
       reorder,
       update,
-      updateTextShowed,
       updateHandler,
     },
     reducer,
